@@ -10,8 +10,16 @@ for (let i = 0; i < document.querySelectorAll(".button").length; i++) {
 }
     document.addEventListener("keydown", function(event){
         makeSound(event.key);
-    })
+        colorChange(event.key);
 
+    })
+    function colorChange(key){
+        let cur = document.querySelector("."+key);
+        cur.classList.add("change");
+            setTimeout(function(){
+                cur.classList.remove("change");
+            },0.9)    
+    }
 
 function makeSound(key){
 
